@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@clayui/button": "^3.5.0",
+    "@clayui/css": "^3.19.0",
     "javascript-time-ago": "^2.0.13",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -24,17 +26,29 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:liferay": "lnbs-build",
+    "deploy:liferay": "npm run build:liferay && lnbs-deploy"
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
-    "enzyme-to-json": "^3.5.0"
+    "enzyme-to-json": "^3.5.0",
+    "liferay-npm-build-support": "^2.19.4",
+    "liferay-npm-bundler": "^2.19.4",
+    "liferay-npm-bundler-preset-create-react-app": "^2.19.4"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "portlet": {
+    "com.liferay.portlet.display-category": "category.sample",
+    "javax.portlet.name": "youtubereact",
+    "javax.portlet.security-role-ref": "power-user,user",
+    "javax.portlet.resource-bundle": "content.Language",
+    "com.liferay.portlet.instanceable": true
+  }
 }
